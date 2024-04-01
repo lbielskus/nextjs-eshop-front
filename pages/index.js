@@ -4,7 +4,7 @@ import Products from '../components/Products';
 import Collection from '../components/Collection';
 import ContactDiv from '../components/ContactDiv';
 import BlogSlide from '../components/BlogSlide';
-import PricingPlans from '../components/PricingPlans';
+import PricingPlans from '../components/Pricingplans.js';
 import { Product } from '../models/Product';
 import { Blog } from '../models/Blog';
 
