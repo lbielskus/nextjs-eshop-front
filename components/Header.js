@@ -24,8 +24,8 @@ export default function Header() {
 
   return (
     <>
-      <header className='bg-third sticky top-0 z-40 w-full px-2 lg:px-4 rounded shadow-xl '>
-        <div className='mx-auto flex h-16 max-w-screen-2xl items-center justify-between border-b border-primary border-opacity-40 bg-third text-white '>
+      <header className='bg-third sticky top-0 z-40 w-full px-2 lg:px-4 rounded-b-xl shadow-xl '>
+        <div className='mx-auto flex h-16 max-w-screen-2xl items-center justify-between border-b border-primary border-opacity-40 bg-third text-white  '>
           <Link
             className='flex gap-1 items-center text-white font-medium text-lg hover:text-zinc-400 '
             href='/'
@@ -66,7 +66,7 @@ export default function Header() {
               )}
             </button>
             {isMobileNavOpen && (
-              <div className='absolute top-[63px] left-0   right-0 bg-gray-300 p-4 rounded-lg border-solid border-third border-2 z-30  sm:w-full md:w-80 lg:w-80'>
+              <div className='absolute top-[73px] left-0 w-2/3 mx-auto  right-0 bg-gray-300 p-4 rounded-xl border-solid border-third border-2 z-30  sm:w-full md:w-80 lg:w-80'>
                 <ul className='flex flex-col gap-2 text-center'>
                   <li>
                     <Link

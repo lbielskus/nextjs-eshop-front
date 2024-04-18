@@ -4,8 +4,8 @@ import Layout from '../../components/Layout';
 const FAQ = () => {
   return (
     <Layout>
-      <div className='container mx-auto px-4 py-8'>
-        <h1 className='text-3xl font-semibold mb-4'>
+      <div className='container px-4 py-8 mt-4 w-1/2 mx-auto '>
+        <h1 className='text-3xl font-semibold mb-6 text-center'>
           Frequently Asked Questions
         </h1>
         <p className='text-lg mb-4'>

@@ -8,6 +8,8 @@ import PricingPlans from '../components/Pricingplans.js';
 import { Product } from '../models/Product';
 import { Blog } from '../models/Blog';
 
+import { DefaultSeo } from 'next-seo';
+
 export default function Home({
   newProducts,
   collectionProduct1,
@@ -18,19 +20,43 @@ export default function Home({
     'https://res.cloudinary.com/dcknlnne1/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1710164930/Webbanner_kh5btu.jpg?_s=public-apps';
 
   return (
-    <main className='h-full p-4 bg-background'>
-      <Banner imageUrl={imageUrl} title='Websites from 50 eur' />
-      <hr className='my-3 h-px border-0 bg-gray-300 ' />
-      <Products products={newProducts} />
-      <hr className='my-3 h-px border-0 bg-gray-300 ' />
-      <Collection product={collectionProduct1} />
+    <>
+      <DefaultSeo
+        title='LB Websites | Home'
+        description='Websites for your niche'
+        openGraph={{
+          type: 'website',
+          locale: 'en_IE',
+          url: 'https://www.yourwebsite.com',
+          site_name: 'LB Websites',
+          title: 'LB Websites',
+          description: 'Websites for your niche',
+          images: [
+            {
+              url: imageUrl,
+              width: 1200,
+              height: 630,
+              alt: 'Your image alt text',
+            },
+          ],
+        }}
+      />
+      <main className='h-full p-4 bg-gray-200'></main>
 
-      <BlogSlide posts={blogPosts} />
-      <hr className='my-3 h-px border-0 bg-gray-300 ' />
-      <PricingPlans products={pricingProducts} />
-      <hr className='my-3 h-px border-0 bg-gray-300 ' />
-      <ContactDiv />
-    </main>
+      <main className='h-full p-4 bg-gray-200'>
+        <Banner imageUrl={imageUrl} title='Websites from 50 eur' />
+        <hr className='my-3 h-px border-0 bg-gray-300 ' />
+        <Products products={newProducts} />
+        <hr className='my-3 h-px border-0 bg-gray-300 ' />
+        <Collection product={collectionProduct1} />
+
+        <BlogSlide posts={blogPosts} />
+        <hr className='my-3 h-px border-0 bg-gray-300 ' />
+        <PricingPlans products={pricingProducts} />
+        <hr className='my-3 h-px border-0 bg-gray-300 mb-6' />
+        <ContactDiv />
+      </main>
+    </>
   );
 }
 

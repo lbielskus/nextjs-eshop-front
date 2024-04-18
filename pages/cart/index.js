@@ -6,6 +6,8 @@ import Spinner from '../../components/Spinner';
 import { signIn, useSession } from 'next-auth/react';
 import Success from '../../components/Success';
 import toast from 'react-hot-toast';
+
+import { DefaultSeo } from 'next-seo';
 import Image from 'next/image';
 
 export default function Cart() {
@@ -103,6 +105,26 @@ export default function Cart() {
   if (session) {
     return (
       <>
+        <DefaultSeo
+          title='LB | Cart'
+          description='Websites for your niche'
+          openGraph={{
+            type: 'website',
+            locale: 'en_IE',
+            url: 'https://www.yourwebsite.com',
+            site_name: 'LB Websites',
+            title: 'LB Websites',
+            description: 'Websites for your niche',
+            images: [
+              {
+                url: '',
+                width: 1200,
+                height: 630,
+                alt: 'Your image alt text',
+              },
+            ],
+          }}
+        />
         <section className='flex justify-between max-md:flex-col space-x-4 '>
           <div className=' md:w-2/3  px-4'>
             <div className=' mt-16 md:mt-6 '>

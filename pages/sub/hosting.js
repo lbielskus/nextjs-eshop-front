@@ -4,8 +4,8 @@ import Layout from '../../components/Layout';
 const Hosting = () => {
   return (
     <Layout>
-      <div className='container mx-auto px-4 py-8'>
-        <h1 className='text-3xl font-semibold mb-4'>Hosting</h1>
+      <div className='container px-4 py-8 mt-4 w-1/2 mx-auto '>
+        <h1 className='text-3xl font-semibold mb-6 text-center'>Hosting</h1>
         <p className='text-lg mb-4'>
           Hosting is the service that allows your website to be accessible on
           the internet. We take care of all hosting-related questions and ensure

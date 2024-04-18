@@ -18,15 +18,15 @@ const ContactButton = () => {
         onMouseLeave={() => setIsHovered(false)}
       >
         {isHovered && (
-          <span className='absolute right-16 bg-white text-green-700 px-4 py-1 rounded shadow-md whitespace-nowrap'>
+          <span className='absolute right-16 bg-white text-green-600 px-4 py-1 rounded-xl shadow-md whitespace-nowrap border-2 border-green-500 border-opacity-30'>
             Contact us
           </span>
         )}
         <button
-          className='bg-green-700 hover:bg-green-600 border-2 border-white text-white flex items-center justify-center w-16 h-16 rounded-full shadow-md'
+          className='bg-green-600 hover:bg-green-700 border-2 border-white text-white flex items-center justify-center w-16 h-16 rounded-full shadow-md'
           onClick={handleClick}
         >
-          <FiPhone size={32} />
+          <FiPhone size={26} />
         </button>
       </div>
     </div>

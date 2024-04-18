@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { CartContext } from '../lib/CartContext';
 import toast from 'react-hot-toast';
 import Image from 'next/image';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 import styles from '../styles/buttonStyles.module.scss';
 
@@ -45,27 +46,25 @@ export default function Products({ products }) {
   };
 
   return (
-    <div className='bg-gray-200 rounded shadow-xl  '>
-      <div className='content-center py-10 max-w-screen-2xl '>
-        <h2 className='text-2xl  tracking-tight text-text text-center  my-15  '>
+    <div className='bg-third rounded-xl shadow-xl'>
+      <div className='content-center py-10 max-w-screen-2xl'>
+        <h2 className='text-2xl tracking-tight text-gray-300 text-center my-15'>
           Our Latest Products
         </h2>
 
-        <div className='mt-6 grid grid-cols-1 gap-x-6 gap-y-10  sm:grid-cols-1 lg:grid-cols-2 xl:gap-x-8 '>
+        <div className='mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-1 lg:grid-cols-2 xl:gap-x-8 justify-center '>
           {products?.length > 0 &&
             products.map((product, index) => (
-              <div
-                key={product._id}
-                className='group relative w-full sm:w-1/2 lg:w-1/2 xl:w-1/2 sm:mx-auto'
-              >
-                <div className='group block overflow-hidden border-4 border-third rounded-xl border-opacity-50 w-[340px] h-[500px] shadow-xl relative bg-third '>
+              <div key={product._id} className='group relative mx-auto'>
+                <div className='group block overflow-hidden border-4 border-third rounded-xl border-opacity-20 w-[340px] h-[500px] shadow-xl relative bg-gray-200'>
                   <div className='p-1'>
-                    <div className='relative h-[400px] sm:h-[400px] '>
+                    <div className='relative h-[400px] sm:h-[400px] rounded-xl'>
                       {product.images.map((image, imgIndex) => (
                         <Image
                           key={imgIndex}
                           src={image}
                           alt=''
+                          loading='lazy'
                           className={`absolute inset-0 h-full w-full object-contain ${
                             imgIndex === currentImageIndexes[index]
                               ? ''
@@ -79,9 +78,9 @@ export default function Products({ products }) {
                       <div className='absolute inset-y-0 left-0 flex items-center'>
                         <button
                           onClick={() => handlePreviousImage(index)}
-                          className='bg-primary  bg-opacity-70 text-white w-8 h-8 rounded-full inline-flex justify-center items-center ml-3'
+                          className='bg-primary bg-opacity-70 text-white w-8 h-8 rounded-full inline-flex justify-center items-center ml-3'
                         >
-                          {'<'}
+                          <FiChevronLeft className='text-xl' />
                         </button>
                       </div>
                       <div className='absolute inset-y-0 right-0 flex items-center'>
@@ -89,21 +88,21 @@ export default function Products({ products }) {
                           onClick={() => handleNextImage(index)}
                           className='bg-primary bg-opacity-70 text-white w-8 h-8 rounded-full inline-flex justify-center items-center mr-3'
                         >
-                          {'>'}
+                          <FiChevronRight className='text-xl' />
                         </button>
                       </div>
                     </div>
                   </div>
 
-                  <div className='absolute bottom-0 left-0 w-full bg-third p-2'>
+                  <div className='absolute bottom-0 left-0 w-full p-2'>
                     <Link href={'/products/' + product._id}>
-                      <h3 className='text-md text-white truncate text-center text-lg'>
+                      <h3 className='text-md text-gray-600 truncate text-center text-lg font-medium'>
                         {product.title}
                       </h3>
                     </Link>
 
                     <div className='mt-1.5 flex items-center justify-between text-text'>
-                      <p className='tracking-wide text-primary text-lg'>
+                      <p className='tracking-wide text-primary font-medium text-lg'>
                         €{formatPrice(calculatePriceWithTaxes(product.price))}
                       </p>
 

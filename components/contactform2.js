@@ -138,29 +138,31 @@ const ContactForm = () => {
       {formSubmitted ? (
         <CongratulationTable />
       ) : (
-        <div className='shadow-2xl max-w-full mx-auto mt-8 p-6  rounded-2xl bg-third bg-clip-border '>
-          <h2 className='text-2xl font-semibold mb-6 text-gray-300 text-center'>
+        <div className='shadow-2xl max-w-full mx-auto mt-8 p-6  rounded-2xl bg-gradient-to-r from-gray-200 to-red-100 bg-clip-border '>
+          <h2 className='text-2xl font-semibold mb-6 text-gray-300'>
             Have a question? Feel free to contact us!
           </h2>
-
-          <p className='pb-11  text-center text-gray-400  '>
-            We are here to assist with any questions that arise. Contact us for
-            any inquiries, and our experts will help you!
+          <p className='pb-6  text-center text-gray-700  '>
+            Ieškote daugiau informacijos apie mūsų gaminius arba reikia pagalbos
+            pasirenkant tobulą variantą?
+          </p>
+          <p className='pb-11  text-center text-gray-700  '>
+            Esame čia, kad padėtume iškilus klausimams. Susisiekite su mumis dėl
+            iškilusių klausimų ir mūsų ekspertai jums padės!
           </p>
           {loading ? <Spinner /> : null}
           <form onSubmit={handleSubmit} className='grid grid-cols-2 gap-6'>
             <div className='col-span-1'>
               <label
                 htmlFor='name'
-                className='block text-sm font-medium text-primary'
+                className='block text-sm font-medium text-gray-700'
               >
-                Name: *
+                Vardas: *
               </label>
               <input
                 type='text'
                 id='name'
                 name='name'
-                placeholder='Name'
                 value={name}
                 onChange={handleNameChange}
                 className='mt-1 p-2 w-full border rounded-2xl bg-gray-300'
@@ -170,15 +172,14 @@ const ContactForm = () => {
             <div className='col-span-1'>
               <label
                 htmlFor='phoneNumber'
-                className='block text-sm font-medium text-primary'
+                className='block text-sm font-medium text-gray-700'
               >
-                Phone Nr.: *
+                Tel.Nr.: *
               </label>
               <input
                 type='text'
                 id='phoneNumber'
                 name='phoneNumber'
-                placeholder='Phone number'
                 value={phoneNumber}
                 onChange={handlephoneNumberChange}
                 className='mt-1 p-2 w-full border rounded-2xl bg-gray-300'
@@ -188,15 +189,14 @@ const ContactForm = () => {
             <div className='col-span-1'>
               <label
                 htmlFor='subject'
-                className='block text-sm font-medium text-primary'
+                className='block text-sm font-medium text-gray-700'
               >
-                Subject: *
+                Tema: *
               </label>
               <input
                 type='text'
                 id='subject'
                 name='subject'
-                placeholder='Subject'
                 value={subject}
                 onChange={handleSubjectChange}
                 className='mt-1 p-2 w-full border rounded-2xl bg-gray-300'
@@ -206,15 +206,14 @@ const ContactForm = () => {
             <div className='col-span-1'>
               <label
                 htmlFor='clientEmail'
-                className='block text-sm font-medium text-primary'
+                className='block text-sm font-medium text-gray-700'
               >
-                Email: *
+                El. Paštas: *
               </label>
               <input
                 type='email'
                 id='clientEmail'
                 name='clientEmail'
-                placeholder='Email'
                 value={clientEmail}
                 onChange={handleClientEmailChange}
                 className='mt-1 p-2 w-full border rounded-2xl bg-gray-300'
@@ -224,14 +223,13 @@ const ContactForm = () => {
             <div className='col-span-2'>
               <label
                 htmlFor='message'
-                className='block text-sm font-medium text-primary'
+                className='block text-sm font-medium text-gray-700'
               >
-                Message: *
+                Pranešimas: *
               </label>
               <textarea
                 id='message'
                 name='message'
-                placeholder='Message'
                 value={message}
                 onChange={handleMessageChange}
                 rows='4'
@@ -239,8 +237,8 @@ const ContactForm = () => {
                 required
               ></textarea>
               <div>
-                <p className='text-primary text-center pt-4'>
-                  * Fill all fields
+                <p className='textžgray-700 text-center pt-4'>
+                  * Užpildykite privalomus laukus
                 </p>
               </div>
             </div>
@@ -249,13 +247,9 @@ const ContactForm = () => {
               <button
                 type='submit'
                 className='flex items-center px-8 py-2 bg-green-700 hover:bg-green-600 text-white rounded-xl focus:outline-none focus:ring focus:border-blue-300'
-                style={{ transition: 'margin-left 0.3s' }}
               >
-                <span className='mr-2'>Send</span>
-                <AiOutlineArrowRight
-                  className='ml-4'
-                  style={{ marginLeft: '0' }}
-                />
+                <span className='mr-2'>Išsiųsti</span>
+                <AiOutlineArrowRight className='ml-4' />
               </button>
             </div>
           </form>

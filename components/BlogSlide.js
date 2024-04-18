@@ -26,23 +26,23 @@ const BlogSlide = ({ posts }) => {
   };
 
   return (
-    <div className='  content-center py-10 max-w-screen-2xl'>
-      <h2 className='text-2xl  tracking-tight text-text text-center  my-15 '>
+    <div className='text-center shadow-xl  content-center py-10 max-w-screen-2xl bg-third rounded-xl border-primary border-2 border-opacity-50'>
+      <h2 className='text-2xl  tracking-tight text-gray-300 text-center  my-15'>
         Featured Blog Posts
       </h2>
       {posts.length > 0 ? (
-        <div className='border p-4 rounded shadow-xl content-center py-10 max-w-screen-2xl bg-gray-200'>
-          <h2 className='text-xl font-semibold text-gray-900'>
+        <div className=' p-4 rounded  content-center py-10 max-w-screen-2xl '>
+          <h2 className='text-xl font-semibold text-gray-300 my-2'>
             {posts[currentPostIndex].title}
           </h2>
-          <p className='text-gray-600 mb-2'>
+          <p className='text-gray-400 mb-6'>
             Published on{' '}
             {format(new Date(posts[currentPostIndex].createdAt), 'MM/dd/yyyy')}{' '}
           </p>
-          <p className='text-gray-700'>
+          <p className='text-gray-400 w-full sm:w-1/2 mx-auto'>
             {truncateContent(posts[currentPostIndex].content, 500)}
           </p>
-          <div className='mt-4'>
+          <div className='mt-8'>
             <button
               className='relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-third to-primary group-hover:from-third group-hover:to-primary hover:text-white dark:text-white  '
               onClick={() => redirectToPost(posts[currentPostIndex]._id)}

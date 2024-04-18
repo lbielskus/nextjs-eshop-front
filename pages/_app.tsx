@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import { Rubik } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { CartContextProvider } from '../lib/CartContext';
@@ -11,7 +11,7 @@ import ContactButton from '../components/ContactButton';
 
 import '../styles/buttonStyles.module.scss';
 
-const rubik = Rubik({
+const montserrat = Montserrat({
   subsets: ['latin'],
 });
 
@@ -33,13 +33,13 @@ export default function App({ Component, pageProps }: AppProps) {
       <SessionProvider session={pageProps.session}>
         <CartContextProvider>
           <main
-            className={`${rubik.className} min-h-screen max-w-screen-2xl mx-auto bg-background sm:px-6`}
+            className={`${montserrat.className} min-h-screen max-w-screen-2xl mx-auto bg-gray-200 sm:px-6`}
           >
             <Header />
             <Toaster position='top-center' />
             <Component
               {...pageProps}
-              className={rubik.className + ' sm:mt-36'}
+              className={montserrat.className + ' sm:mt-36'}
             />
             <Footer />
             <ContactButton />

@@ -4,8 +4,8 @@ import Layout from '../../components/Layout';
 const Services = () => {
   return (
     <Layout>
-      <div className='container mx-auto px-4 py-8'>
-        <h1 className='text-3xl font-semibold mb-4'>Services</h1>
+      <div className='container px-4 py-8 mt-4 w-1/2 mx-auto '>
+        <h1 className='text-3xl font-semibold mb-6 text-center'>Services</h1>
         <p className='text-lg mb-4'>
           We offer a comprehensive range of services to meet your website
           development needs. Our services include:

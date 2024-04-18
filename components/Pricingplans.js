@@ -4,7 +4,7 @@ import { CartContext } from '../lib/CartContext';
 import toast from 'react-hot-toast';
 import React from 'react';
 
-import styles from '../styles/buttonStyles.module.scss';
+import styles from '../styles/buttonStyles3.module.scss';
 
 const formatPrice = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -31,23 +31,23 @@ const PricingPlans = ({ products }) => {
   );
 
   return (
-    <section className='bg-white dark:bg-third max-w-full rounded '>
-      <div className='py-8 px-4 mx-auto lg:py-4 shadow-2xl'>
+    <section className='bg-white dark:bg-third max-w-full rounded-xl mb-8 pb-8'>
+      <div className=' py-8 px-4 mx-auto lg:py-4  rounded-xl mb-8'>
         <div className='mx-auto w-full text-center mb-8 lg:mb-12 '>
-          <h2 className='mb-4 text-3xl tracking-tight font-extrabold text-third dark:text-white '>
+          <h2 className='mb-4 mt-8 text-2xl  tracking-tight  text-center text-third dark:text-gray-300 '>
             Designed for business visibility
           </h2>
-          <p className='mb-5 font-light text-gray-500  dark:text-gray-400'>
+          <p className='mb-5 font-light text-gray-400  dark:text-gray-400'>
             LB Web focus on markets where technology, innovation, and capital
             can unlock long-term value and drive economic growth.
           </p>
         </div>
-        <div className='space-y-8 lg:grid lg:grid-cols-4 sm:gap-6 xl:gap-1 lg:space-y-0 w-full shadow-xl'>
+        <div className='space-y-8 lg:grid lg:grid-cols-4 sm:gap-6 xl:gap-1 lg:space-y-0 w-full '>
           {filteredProducts?.length > 0 &&
             filteredProducts.map((product, index) => (
               <div
                 key={product._id}
-                className={`flex flex-col p-5 mx-auto max-w-80 lg:max-w-80 text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white ${
+                className={`flex flex-col p-5 mx-auto max-w-80 lg:max-w-80 text-center text-gray-900 bg-white rounded-xl border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white ${
                   index > 0 ? 'mt-8 lg:mt-0' : ''
                 }`}
                 style={{

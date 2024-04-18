@@ -65,6 +65,6 @@
 }
 
 .draw-border {
-  @include btn-border-drawing(#525252de, #ff64c4, 3px, bottom, right);
+  @include btn-border-drawing(#ebebebde, #ff64c4, 3px, bottom, right);
   border-radius: 5px;
 }

@@ -4,8 +4,10 @@ import Layout from '../../components/Layout';
 const MobileResponsive = () => {
   return (
     <Layout>
-      <div className='container mx-auto px-4 py-8'>
-        <h1 className='text-3xl font-semibold mb-4'>Mobile Responsive</h1>
+      <div className='container px-4 py-8 mt-4 w-1/2 mx-auto '>
+        <h1 className='text-3xl font-semibold mb-6 text-center'>
+          Mobile Responsive
+        </h1>
         <p className='text-lg mb-4'>
           Mobile responsiveness is crucial for modern websites due to the
           increasing usage of smartphones and tablets. Here&#39;s why it&#39;s
